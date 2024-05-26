@@ -1,28 +1,30 @@
 package com.example.contohrecyclerview
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.contohrecyclerview.databinding.ItemRestaurantBinding
 
-class RestaurantAdapter(private val restaurants: List<Restaurant>) : RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder {
-        val binding = ItemRestaurantBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return RestaurantViewHolder(binding)
+class MyAdapter(private val mData: List<String>) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_restaurant, parent, false)
+        return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {
-        val restaurant = restaurants[position]
-        holder.binding.apply {
-            imageRestaurant.setImageResource(restaurant.image)
-            textRestaurantName.text = restaurant.name
-            textRating.text = restaurant.rating.toString()
-        }
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = mData[position]
+        holder.itemText.text = item
     }
 
-    override fun getItemCount(): Int = restaurants.size
+    override fun getItemCount(): Int {
+        return mData.size
+    }
 
-    class RestaurantViewHolder(val binding: ItemRestaurantBinding) : RecyclerView.ViewHolder(binding.root)
-
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val itemText: TextView = itemView.findViewById(R.id.item_text)
+    }
 }
