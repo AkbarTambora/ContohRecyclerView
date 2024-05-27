@@ -30,7 +30,14 @@ class MainActivity : AppCompatActivity() {
             Restaurant(R.drawable.breakfast, "Nama Restoran 2", 4.5f),
             Restaurant(R.drawable.breakfast, "Nama Restoran 3", 4.5f),
             Restaurant(R.drawable.breakfast, "Nama Restoran 4", 4.5f),
-            Restaurant(R.drawable.breakfast, "Nama Restoran 5", 4.5f)
+            Restaurant(R.drawable.breakfast, "Nama Restoran 5", 4.5f),
+            Restaurant(R.drawable.breakfast, "Nama Restoran 6", 4.5f),
+            Restaurant(R.drawable.breakfast, "Nama Restoran 7", 4.5f),
+            Restaurant(R.drawable.breakfast, "Nama Restoran 8", 4.5f),
+            Restaurant(R.drawable.breakfast, "Nama Restoran 9", 4.5f),
+            Restaurant(R.drawable.breakfast, "Nama Restoran 10", 4.5f),
+            Restaurant(R.drawable.breakfast, "Nama Restoran 11", 4.5f)
+
             // Tambahkan lebih banyak restoran sesuai kebutuhan
         )
 
